@@ -153,10 +153,13 @@ function! vimtex#util#shellescape(cmd) abort " {{{1
   " error.
   "
   if has('win32')
+    let l:shell = &shell
+    set shell=cmd
     let l:shellslash = &shellslash
     set noshellslash
     let l:cmd = escape(shellescape(a:cmd), '\')
     let &shellslash = l:shellslash
+    let &shell = l:shell
     return l:cmd
   else
     return escape(shellescape(a:cmd), '\')
