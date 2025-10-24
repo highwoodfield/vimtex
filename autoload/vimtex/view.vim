@@ -141,7 +141,7 @@ function! vimtex#view#inverse_search_cmd(line, filename, column) abort
     endtry
   endif
 
-  quitall!
+  quitall
 endfunction
 
 
